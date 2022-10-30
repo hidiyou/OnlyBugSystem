@@ -1,0 +1,6 @@
+#忽略虚拟机
+/TEST
+bochsout.txt
+#忽略输出与中间文件
+*.o
+*.bin

@@ -1,0 +1,7 @@
+floppya:1_44=OS.bin,status=inserted
+
+boot:floppy
+
+log:bochsout.txt
+
+mouse:enabled=0
