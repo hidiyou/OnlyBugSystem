@@ -1,4 +1,6 @@
-ALL:OS.bin: mbr.o run.o
+ALL: OS.bin
+
+OS.bin: mbr.o run.o
     cat mbr.o>OS.bin
     cat run.o>>OS.bin
 mbr.o: mbr.asm
