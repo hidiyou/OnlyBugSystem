@@ -22,3 +22,9 @@ jobs:
       
     - name: make
       run: make
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: build_output
+        path: output
