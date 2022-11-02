@@ -1,6 +1,7 @@
 ALL: OS.bin
 
 OS.bin: mbr.o run.o
+	mkdir output
 	cat mbr.o>output/OS.bin
 	cat run.o>>output/OS.bin
 	make clean
