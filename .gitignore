@@ -1,6 +1,11 @@
 #忽略虚拟机
 /TEST
+/OBS
 bochsout.txt
-#忽略输出与中间文件
+#忽略中间文件
 *.o
 *.bin
+#忽略输出文件
+output/
+#忽略IDE无需同步的配置
+OnlyBugSystem.code-workspace

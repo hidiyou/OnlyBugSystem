@@ -1,13 +1,22 @@
-ALL: OS.bin
+#目录配置
+OUTPUT = output
+#防无用报错导致编译中断
+RM = -rm -f
+RMDIR = -rmdir
+MKDIR = -mkdir
 
-OS.bin: mbr.o run.o
-	mkdir output
-	cat mbr.o>output/OS.bin
-	cat run.o>>output/OS.bin
-	make clean
-mbr.o: mbr.asm
-	nasm -o mbr.o mbr.asm
-run.o: run.asm
-	nasm -o run.o run.asm
+ALL: OS.bin
+OS.bin: asm-mbr.o asm-run.o
+	$(MKDIR) $(OUTPUT)
+	cat asm-mbr.o>$(OUTPUT)/OS.bin
+	cat asm-run.o>>$(OUTPUT)/OS.bin
+asm-mbr.o: mbr.asm
+	nasm -o asm-mbr.o mbr.asm
+asm-run.o: run.asm
+	nasm -o asm-run.o run.asm
+cleanALL: clean cleanOutPut
 clean:
-	rm *.o
+	$(RM) ./*.o
+cleanOutPut:
+	$(RM) $(OUTPUT)/*
+	$(RMDIR) $(OUTPUT)

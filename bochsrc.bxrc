@@ -1,4 +1,4 @@
-floppya:1_44=OS.bin,status=inserted
+floppya:1_44=output/OS.bin,status=inserted
 
 boot:floppy
 
